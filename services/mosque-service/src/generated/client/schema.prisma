@@ -1,0 +1,60 @@
+// Prisma Schema for Mosque Service
+
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../src/generated/client"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Mosque {
+  id         String             @id @default(uuid())
+  name       String
+  address    String
+  city       String
+  postcode   String
+  phone      String?
+  email      String?
+  website    String?
+  capacity   Int?
+  facilities String[]           @default([])
+  imams      Imam[]
+  management ManagementMember[]
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  @@map("mosques")
+}
+
+model Imam {
+  id        String   @id @default(uuid())
+  name      String
+  title     String?
+  biography String?
+  email     String?
+  phone     String?
+  mosque    Mosque   @relation(fields: [mosqueId], references: [id])
+  mosqueId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("imams")
+}
+
+model ManagementMember {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  email     String?
+  phone     String?
+  mosque    Mosque   @relation(fields: [mosqueId], references: [id])
+  mosqueId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("management_members")
+}

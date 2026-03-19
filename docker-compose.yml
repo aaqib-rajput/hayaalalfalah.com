@@ -1,0 +1,155 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - identity-service
+      - mosque-service
+    networks:
+      - mosque_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - mosque_network
+
+  identity-service:
+    build:
+      context: .
+      dockerfile: services/identity-service/Dockerfile
+    environment:
+      - PORT=4001
+      - DATABASE_URL=postgresql://user:password@postgres:5432/identity_db?schema=public
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - mosque_network
+
+  mosque-service:
+    build:
+      context: .
+      dockerfile: services/mosque-service/Dockerfile
+    environment:
+      - PORT=4002
+      - DATABASE_URL=postgresql://user:password@postgres:5432/mosque_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  prayer-event-service:
+    build:
+      context: .
+      dockerfile: services/prayer-event-service/Dockerfile
+    environment:
+      - PORT=4003
+      - DATABASE_URL=postgresql://user:password@postgres:5432/prayer_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  community-service:
+    build:
+      context: .
+      dockerfile: services/community-service/Dockerfile
+    environment:
+      - PORT=4004
+      - DATABASE_URL=postgresql://user:password@postgres:5432/community_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  governance-service:
+    build:
+      context: .
+      dockerfile: services/governance-service/Dockerfile
+    environment:
+      - PORT=4005
+      - DATABASE_URL=postgresql://user:password@postgres:5432/governance_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  library-service:
+    build:
+      context: .
+      dockerfile: services/library-service/Dockerfile
+    environment:
+      - PORT=4006
+      - DATABASE_URL=postgresql://user:password@postgres:5432/library_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  finance-service:
+    build:
+      context: .
+      dockerfile: services/finance-service/Dockerfile
+    environment:
+      - PORT=4007
+      - DATABASE_URL=postgresql://user:password@postgres:5432/finance_db?schema=public
+    depends_on:
+      - postgres
+    networks:
+      - mosque_network
+
+  notification-service:
+    build:
+      context: .
+      dockerfile: services/notification-service/Dockerfile
+    environment:
+      - PORT=4008
+      - DATABASE_URL=postgresql://user:password@postgres:5432/notification_db?schema=public
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - mosque_network
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_MULTIPLE_DATABASES=identity_db,mosque_db,prayer_db,community_db,governance_db,library_db,finance_db,notification_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mosque_network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - mosque_network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  mosque_network:
+    driver: bridge

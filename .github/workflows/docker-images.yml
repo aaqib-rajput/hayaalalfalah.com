@@ -1,0 +1,89 @@
+name: Docker Images
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        service:
+          - name: api-gateway
+            context: ./services/api-gateway
+            dockerfile: ./services/api-gateway/Dockerfile
+          - name: frontend
+            context: .
+            dockerfile: ./frontend/Dockerfile
+          - name: identity-service
+            context: .
+            dockerfile: ./services/identity-service/Dockerfile
+          - name: mosque-service
+            context: .
+            dockerfile: ./services/mosque-service/Dockerfile
+          - name: prayer-event-service
+            context: .
+            dockerfile: ./services/prayer-event-service/Dockerfile
+          - name: community-service
+            context: .
+            dockerfile: ./services/community-service/Dockerfile
+          - name: governance-service
+            context: .
+            dockerfile: ./services/governance-service/Dockerfile
+          - name: library-service
+            context: .
+            dockerfile: ./services/library-service/Dockerfile
+          - name: finance-service
+            context: .
+            dockerfile: ./services/finance-service/Dockerfile
+          - name: notification-service
+            context: .
+            dockerfile: ./services/notification-service/Dockerfile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/mosqueconnect-${{ matrix.service.name }}
+          tags: |
+            type=ref,event=branch
+            type=sha,prefix=sha-
+            type=raw,value=latest,enable={{is_default_branch}}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ matrix.service.context }}
+          file: ${{ matrix.service.dockerfile }}
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

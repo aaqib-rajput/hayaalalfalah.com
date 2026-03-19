@@ -1,0 +1,12 @@
+**/node_modules
+**/dist
+**/.next
+.git
+.github
+*.log
+.env
+.env.local
+.DS_Store
+*.seed.sql
+**/coverage
+**/test-results

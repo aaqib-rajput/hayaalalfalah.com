@@ -1,0 +1,414 @@
+(node:22960) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Failed to proxy http://localhost:4001/api/auth/me Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Failed to proxy http://localhost:4003/api/events Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Failed to proxy http://localhost:4002/api/mosques Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalAnnouncementsPage (app\announcements\page.tsx:27:36)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '3310091562',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalAnnouncementsPage (app\announcements\page.tsx:27:36)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '3310091562',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalDonationsPage (app\donations\page.tsx:18:28)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '1332810540',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+Failed to proxy http://localhost:4001/api/auth/me Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Failed to proxy http://localhost:4003/api/events Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Failed to proxy http://localhost:4002/api/mosques Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalAnnouncementsPage (app\announcements\page.tsx:27:36)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '3310091562',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalDonationsPage (app\donations\page.tsx:18:28)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '1332810540',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalDonationsPage (app\donations\page.tsx:18:28)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '3244268621',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalDonationsPage (app\donations\page.tsx:18:28)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '1332810540',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+Failed to proxy http://localhost:4001/api/auth/me Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Failed to proxy http://localhost:4003/api/events Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Failed to proxy http://localhost:4002/api/mosques Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Failed to proxy http://localhost:4001/api/auth/me Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Failed to proxy http://localhost:4003/api/events Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Failed to proxy http://localhost:4002/api/mosques Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Failed to proxy http://localhost:4001/api/auth/me Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Error: connect ECONNREFUSED ::1:4001
+    at <unknown> (Error: connect ECONNREFUSED ::1:4001) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4001
+}
+Failed to proxy http://localhost:4003/api/events Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Error: connect ECONNREFUSED ::1:4003
+    at <unknown> (Error: connect ECONNREFUSED ::1:4003) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4003
+}
+Failed to proxy http://localhost:4002/api/mosques Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+Error: connect ECONNREFUSED ::1:4002
+    at <unknown> (Error: connect ECONNREFUSED ::1:4002) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 4002
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalAnnouncementsPage (app\announcements\page.tsx:27:36)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '79310667',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+⨯ TypeError: fetch failed
+    at async fetchApi (lib\api-client.ts:15:20)
+    at async GlobalDonationsPage (app\donations\page.tsx:18:28)
+  13 |   }
+  14 |
+> 15 |   const response = await fetch(url, {
+     |                    ^
+  16 |     ...options,
+  17 |     cache: options?.cache ?? 'no-store',
+  18 |     credentials: 'include', {
+  digest: '3244268621',
+  [cause]: Error: getaddrinfo ENOTFOUND api-gateway
+      at ignore-listed frames {
+    errno: -3008,
+    code: 'ENOTFOUND',
+    syscall: 'getaddrinfo',
+    hostname: 'api-gateway'
+  }
+}
+^C^C

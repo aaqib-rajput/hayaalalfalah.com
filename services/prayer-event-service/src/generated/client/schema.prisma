@@ -1,0 +1,49 @@
+// Prisma Schema for Prayer & Event Service
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PrayerTime {
+  id        String   @id @default(uuid())
+  mosqueId  String
+  date      DateTime @db.Date
+  fajr      String
+  sunrise   String
+  dhuhr     String
+  asr       String
+  maghrib   String
+  isha      String
+  iqama     Json? // Store custom iqama times if different
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([mosqueId, date])
+  @@map("prayer_times")
+}
+
+model Event {
+  id                     String    @id @default(uuid())
+  mosqueId               String
+  title                  String
+  description            String?
+  startDate              DateTime
+  endDate                DateTime?
+  location               String?
+  category               String?
+  coverImageUrl          String?
+  organizer              String?
+  isRegistrationRequired Boolean   @default(false)
+  capacity               Int?
+  price                  Decimal?  @default(0.00) @db.Decimal(10, 2)
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  @@map("events")
+}

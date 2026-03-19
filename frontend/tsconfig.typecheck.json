@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "app/feed/**",
+    "app/community/**",
+    "app/shura/**",
+    "app/admin/community/**",
+    "app/test-route/**",
+    "components/feed/**",
+    "components/community/**",
+    "lib/feed-store.ts",
+    "lib/shura-store.ts",
+    "lib/shura-mock-data.ts",
+    "lib/webrtc-service.ts",
+    "tsconfig.tsbuildinfo"
+  ]
+}

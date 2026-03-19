@@ -1,0 +1,42 @@
+// Prisma Schema for Library Service
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id              String   @id @default(uuid())
+  mosqueId        String
+  title           String
+  author          String?
+  isbn            String?
+  category        String?
+  language        String?
+  availableCopies Int      @default(1)
+  totalCopies     Int      @default(1)
+  location        String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("books")
+}
+
+model Borrowing {
+  id           String    @id @default(uuid())
+  bookId       String
+  userId       String
+  borrowedDate DateTime  @default(now())
+  dueDate      DateTime
+  returnedDate DateTime?
+  status       String    @default("borrowed")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("borrowings")
+}

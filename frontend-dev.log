@@ -1,0 +1,63 @@
+
+> my-project@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3000
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+
+✓ Starting...
+Creating turbopack project {
+  dir: 'D:\\Antigravity\\Proj - 01 - v2 - test\\frontend',
+  testMode: true
+}
+✓ Ready in 1944ms
+○ Compiling / ...
+ GET / 200 in 5.7s (compile: 4.3s, render: 1342ms)
+ GET / 200 in 682ms (compile: 61ms, render: 621ms)
+○ Compiling /_error ...
+ GET /icon.svg 404 in 3.0s (compile: 2.1s, render: 916ms)
+ GET /icon-light-32x32.png 404 in 178ms (compile: 59ms, render: 119ms)
+ GET /mosques 200 in 1410ms (compile: 1266ms, render: 145ms)
+ GET /mosques 200 in 191ms (compile: 60ms, render: 130ms)
+ GET /mosques 200 in 79ms (compile: 9ms, render: 70ms)
+ GET /prayer-times 200 in 1559ms (compile: 1456ms, render: 103ms)
+ GET /prayer-times 200 in 56ms (compile: 5ms, render: 51ms)
+ GET /events 200 in 840ms (compile: 694ms, render: 146ms)
+ GET /events 200 in 58ms (compile: 5ms, render: 53ms)
+ GET /announcements 200 in 2.9s (compile: 557ms, render: 2.4s)
+ GET /login 200 in 554ms (compile: 507ms, render: 47ms)
+ GET /announcements 200 in 4.5s (compile: 4ms, render: 4.5s)
+ GET /login 200 in 30ms (compile: 4ms, render: 25ms)
+ GET /donations 200 in 5.9s (compile: 649ms, render: 5.2s)
+ GET /admin 200 in 802ms (compile: 750ms, render: 52ms)
+ GET /mosques 200 in 54ms (compile: 5ms, render: 49ms)
+ GET /mosques 200 in 72ms (compile: 5ms, render: 67ms)
+ GET /prayer-times 200 in 51ms (compile: 5ms, render: 46ms)
+ GET /donations 200 in 1692ms (compile: 4ms, render: 1687ms)
+ GET / 200 in 452ms (compile: 19ms, render: 433ms)
+ GET /icon.svg 404 in 97ms (compile: 20ms, render: 77ms)
+ GET /icon-light-32x32.png 404 in 92ms (compile: 15ms, render: 77ms)
+ GET /mosques 200 in 76ms (compile: 7ms, render: 69ms)
+ GET /prayer-times 200 in 58ms (compile: 8ms, render: 50ms)
+ GET /events 200 in 67ms (compile: 19ms, render: 47ms)
+ GET /announcements 200 in 2.3s (compile: 7ms, render: 2.3s)
+ GET /donations 200 in 3.7s (compile: 6ms, render: 3.7s)
+ GET /donations 200 in 5.8s (compile: 4ms, render: 5.8s)
+ GET /donations 200 in 7.8s (compile: 7ms, render: 7.8s)
+ GET / 200 in 336ms (compile: 17ms, render: 319ms)
+ GET / 200 in 337ms (compile: 7ms, render: 331ms)
+ GET /mosques 200 in 74ms (compile: 14ms, render: 60ms)
+ GET / 200 in 1465ms (compile: 362ms, render: 1103ms)
+ GET /icon.svg 404 in 349ms (compile: 214ms, render: 135ms)
+ GET /icon-light-32x32.png 404 in 247ms (compile: 25ms, render: 222ms)
+ GET /mosques 200 in 120ms (compile: 51ms, render: 69ms)
+ GET /mosques 200 in 84ms (compile: 14ms, render: 71ms)
+ GET /prayer-times 200 in 110ms (compile: 43ms, render: 67ms)
+ GET /events 200 in 114ms (compile: 46ms, render: 68ms)
+ GET /announcements 200 in 2.4s (compile: 55ms, render: 2.4s)
+ GET /login 200 in 140ms (compile: 62ms, render: 78ms)
+ GET /login 200 in 38ms (compile: 8ms, render: 30ms)
+ GET /login 200 in 59ms (compile: 21ms, render: 38ms)
+ GET /login 200 in 47ms (compile: 6ms, render: 41ms)
+ GET /donations 200 in 3.9s (compile: 48ms, render: 3.8s)

@@ -1,0 +1,40 @@
+{
+  "name": "mosqueconnect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MosqueConnect - Virtual Mosque Management Platform",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "frontend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:mosque": "npm run dev --workspace=mosque-service",
+    "dev:identity": "npm run dev --workspace=identity-service",
+    "dev:prayer": "npm run dev --workspace=prayer-event-service",
+    "dev:community": "npm run dev --workspace=community-service",
+    "dev:governance": "npm run dev --workspace=governance-service",
+    "dev:library": "npm run dev --workspace=library-service",
+    "dev:finance": "npm run dev --workspace=finance-service",
+    "build:packages": "npm run build --workspace=@mosqueconnect/shared-types && npm run build --workspace=@mosqueconnect/shared-utils",
+    "build:services": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "eslint . --max-warnings=0",
+    "clean": "npm run clean --workspaces --if-present",
+    "prisma:generate": "npm run build:packages && npm run prisma:generate --workspaces",
+    "db:migrate": "npx prisma migrate dev --workspaces",
+    "db:seed": "npx prisma db seed --workspaces",
+    "test": "vitest --configLoader runner"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "globals": "^15.15.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^4.1.0"
+  }
+}

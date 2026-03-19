@@ -1,0 +1,35 @@
+// Notification Service Schema
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Notification {
+  id        String   @id @default(uuid()) @db.Uuid
+  type      String   // EMAIL, SMS, PUSH
+  recipient String
+  subject   String?
+  content   String
+  status    String   // PENDING, SENT, FAILED
+  error     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("notifications")
+}
+
+model Template {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @unique
+  subject   String?
+  content   String   // Handlebars or simple placeholder format
+  type      String   // EMAIL, SMS, PUSH
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("templates")
+}

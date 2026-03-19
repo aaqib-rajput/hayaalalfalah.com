@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PAGINATION = exports.HTTP_STATUS = void 0;
+// HTTP Status Code Constants
+exports.HTTP_STATUS = {
+    OK: 200,
+    CREATED: 201,
+    NO_CONTENT: 204,
+    BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
+    FORBIDDEN: 403,
+    NOT_FOUND: 404,
+    CONFLICT: 409,
+    UNPROCESSABLE_ENTITY: 422,
+    INTERNAL_SERVER_ERROR: 500,
+    BAD_GATEWAY: 502,
+    SERVICE_UNAVAILABLE: 503,
+};
+// Pagination defaults
+exports.PAGINATION = {
+    DEFAULT_PAGE: 1,
+    DEFAULT_LIMIT: 20,
+    MAX_LIMIT: 100,
+};
+//# sourceMappingURL=constants.js.map

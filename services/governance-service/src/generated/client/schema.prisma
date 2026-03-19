@@ -1,0 +1,40 @@
+// Prisma Schema for Governance Service
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ShuraMember {
+  id              String    @id @default(uuid())
+  name            String
+  title           String?
+  biography       String?
+  email           String?
+  phone           String?
+  isActive        Boolean   @default(true)
+  appointmentDate DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("shura_members")
+}
+
+model MosqueVisit {
+  id        String   @id @default(uuid())
+  mosqueId  String
+  visitorId String
+  visitDate DateTime
+  purpose   String
+  notes     String?
+  status    String   @default("planned")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("mosque_visits")
+}
